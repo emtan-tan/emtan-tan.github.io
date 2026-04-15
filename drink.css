@@ -109,6 +109,14 @@ td {
 tr:nth-of-type(odd) {
     background-color: #f9f9f9;
 }
+form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+input, textarea {
+    margin: 1em 0;
+}
 footer {
     background-color: #00754a;
     color: white;
@@ -144,10 +152,10 @@ h1  {
     margin-top: 0;
 }
 h2 {
-    margin-top: .5rem;
+    margin-top: 1rem;
 }
 h3 {
-    margin-top: 1rem;
+    margin-top: .5rem;
 }
 
 @media screen and (min-width: 600px) {
