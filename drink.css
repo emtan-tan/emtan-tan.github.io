@@ -1,72 +1,81 @@
 /* Chosen Colors:
-        text: #000000           (black)
-        background: #ffffff     (white)
+        text: black             (black)
+        background: white       (white)
         primary: #00754a        (green)
         secondary: #d4e8e1      (light green)
         accent: #c89e6a         (tan)
         link: #6f4e37           (brown)
 */
+* {
+    box-sizing: border-box;
+}
+html {
+    font-size: 14px;
+    }
 body { 
-    background-color: #ffffff;
+    background-color: white;
     font-family: 'Trebuchet MS', Arial, sans-serif;
     padding: .1rem;
 }
+a {
+    text-decoration: none;
+}
 #wrapper {
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
+    margin: 1rem; 
 }
 header { 
     background-color: #00754a; 
-    color: #FFFFFF;
+    color: white;
     text-align: center;
     padding: 20px 20px;
     margin: 0 1rem;
     border-radius: 8px;
-}
-header a {
-    text-decoration: none;
 }
 nav {
     font-weight: bold;
     padding: 0;
 }
 nav ul {
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem;
     list-style-type: none;
 }
 nav a {
-    text-decoration: none;
-    display: block;
+    display: flex;
+    justify-content: center;
     background-color: #d4e8e1;
-    padding: 1rem;
+    padding: 2rem;
     color: #6f4e37;
     border-radius: 8px;
+    margin: .25rem .25rem;
 }
 nav a:visited {
     color: #c89e6a;
 }
 nav a:hover {
-    color: #FFFFFF;
+    color: white;
     background-color: #00754a;
 }
 main { 
-    background-color: #FFFFFF;
+    background-color: white;
     padding: 0 1rem;
     display: block;
 }
 main a {
     color: #00754a;
-    text-decoration: none;
 }
 #introduction-section {
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     background-color: #d4e8e1;
     padding: 1rem;
     margin: 1rem 0;
     gap: 1rem;
     border-radius: 8px;
-    font-size: 1.2rem;
+    font-size: 1.2rem;   
 }
 .text-content {
     flex: 1;
@@ -81,7 +90,8 @@ video, img {
 }
 #reviews-section {
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     background-color: #d4e8e1;
     padding: 1rem;
     gap: 1rem;
@@ -89,39 +99,42 @@ video, img {
     font-size: 1.1rem;
 }
 table {
-    border: 2px solid #000033;
+    border: 2px solid black;
     border-collapse: collapse;
     
 }
 td, th {
     padding: .25rem;
-    border: 2px solid #000033;
+    border: 2px solid black;
 }
 td {
     text-align: center;
-    font-size: .9snirem;
+    font-size: .9rem;
 }
 tr:nth-of-type(odd) {
     background-color: #f9f9f9;
 }
 footer {
     background-color: #00754a;
-    color: #FFFFFF;
+    color: white;
     text-align: center;
-    padding: 10px 20px;
+    /* 
+    */
     margin: 1rem;
     border-radius: 8px;
+    padding: 2.5px 5px;
 }
 footer ul {
+    padding: 0;
+    margin: 0;
     list-style-type: none;
 }
 footer li {
-    display: inline;
-    margin: 0 1rem;
+    display: block;
+    margin: .5rem 0;
 }
 footer a {
-    color: #FFFFFF;
-    text-decoration: none;
+    color: white;
 }
 footer a:hover {
     color: #c89e6a;
@@ -143,97 +156,16 @@ h2 {
 h3 {
     margin-top: 1rem;
 }
-@media (max-width:879px) {
-    html {
-        font-size: 14px;
-    }
-    #wrapper {
-        margin: 1rem;
-    }
-    nav ul {
-        display: block;
-        margin: 0;
-        padding: 1rem;
-    }
-    nav a {
-        display: block;
-        margin: .25rem 0;
-        text-align: center;
-    }
-    #introduction-section,
-    #reviews-section {
-        flex-direction: column;
-        align-items: center;
-    }
-    footer {
-        text-align: center;
-        padding: 2.5px 5px;
-        margin: 1rem;
-        border-radius: 8px;
-    }
-    footer ul {
-        padding: 0;
-        margin: 0;
-    }
-    footer li {
-        display: block;
-        margin: .5rem 0;
-    }
-    @supports (display: grid) {
-        header {
-            grid-area: header;
-        }
-        nav {
-            grid-area: nav;
-        }
-        main {
-            grid-area: main;
-        }
-        footer {
-            grid-area: footer;
-        }
-        #wrapper {
-            display: grid;
-            grid-template-areas: 
-                "header"
-                "nav"
-                "main"
-                "footer";
-        }
-        #reviews-section .text-content {
-            grid-area: text;
-        }
-        #reviews-section img {
-            grid-area: image;
-        }
-        #reviews-section table {
-            grid-area: table;
-        }
-        #reviews-section {
-            display: grid;
-            grid-template-areas: 
-                "text"
-                "image"
-                "table";
-            gap: 1rem;
-        }
-    }
-}
-@media (min-width: 880px) and (max-width: 1575px) {
+
+@media screen and (min-width: 600px) {
     html {
         font-size: 15px;
     }
-    #wrapper {
-        margin: auto;
-        width: 95%;
+    nav ul {
+        display: block;
     }
-    header {
-        text-align: left;
-        padding-left: 1em;
-    }
-    #introduction-section {
-        flex-direction: column;
-        align-items: center;
+    nav a {
+        padding: 1rem;
     }
     video, img {
         display: block;
@@ -242,6 +174,9 @@ h3 {
         max-width: 500px;
         height: auto;
         border-radius: 8px;
+    }
+    footer {
+        padding: 10px 20px; 
     }
     @supports (display: grid) {
         #reviews-section .text-content {
@@ -263,19 +198,48 @@ h3 {
     }
 }
 
-@media (min-width:1576px) {
-    #wrapper {
-        margin: auto;
-        width: 95%;
-    }
+@media screen and (min-width:1024px) {
     header {
         text-align: left;
+        align-items: center;
+    }
+    nav {
+        padding-left: none;
+    }
+    nav ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    nav a {
+        text-align: center;
     }
     #introduction-section .text-content {
-        margin: 4rem;
+        margin: 2rem 4rem 0 4rem;
     }
-    video {
-        margin-right: 2rem;
+    video, img {
+        display: block;
+        margin: 1rem auto;
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        border-radius: 8px;
+    }
+    img {
+        min-width: 200px;
+    }
+    #reviews-section .text-content {
+        margin: 1.5rem 1rem;
+    }
+    #reviews-section table {
+        margin: 1.5rem 1rem;
+    }
+    footer {
+        padding: 1.5rem;
+    }
+    footer li {
+        display: inline;
+        margin: 0 1rem; 
     }
     @supports (display: grid) {
         header {
@@ -296,16 +260,15 @@ h3 {
                 "header nav"
                 "main main"
                 "footer footer";
+            grid-template-columns: 1fr 45%;
         }
         #reviews-section .text-content {
-            margin: 1.5rem 1rem;
             grid-area: text;
         }
         #reviews-section img {
             grid-area: image;
         }
         #reviews-section table {
-            margin: 1.5rem 1rem;
             grid-area: table;
         }
         #reviews-section {
